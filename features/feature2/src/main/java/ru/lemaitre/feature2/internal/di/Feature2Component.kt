@@ -1,9 +1,9 @@
-package ru.lemaitre.mymultymodule.feature2.internal.di
+package ru.lemaitre.feature2.internal.di
 
 import androidx.fragment.app.Fragment
 import dagger.Component
-import ru.lemaitre.mymultymodule.feature2.api.Feature2Deps
-import ru.lemaitre.mymultymodule.feature2.api.FeatureFragmentProvider
+import ru.lemaitre.feature2.api.Feature2Deps
+import ru.lemaitre.feature2.api.FeatureFragmentProvider
 
 @Component(dependencies = [Feature2Deps::class])
 interface Feature2Component {

@@ -1,10 +1,10 @@
-package ru.lemaitre.mymultymodule.domain
+package ru.lemaitre.shared
 
-import ru.lemaitre.mymultymodule.di.MainActivityScope
 import javax.inject.Inject
+import javax.inject.Singleton
 import kotlin.random.Random
 
-@MainActivityScope
+@Singleton
 class AccountUseCase @Inject constructor() {
 
     fun getAccountNumber() = "number ${Random.nextInt()}"

@@ -1,4 +1,4 @@
-package ru.lemaitre.mymultymodule.feature2.api
+package ru.lemaitre.feature2.api
 
 import android.content.Context
 import android.os.Bundle
@@ -8,10 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import ru.lemaitre.mymultymodule.R
+import ru.lemaitre.feature2.R
+import ru.lemaitre.feature2.internal.di.DaggerFeature2Component
 import ru.lemaitre.mymultymodule.core.findDependencies
-import ru.lemaitre.mymultymodule.feature2.internal.di.DaggerFeature2Component
-import javax.inject.Inject
 
 class Feature2Fragment: Fragment() {
 

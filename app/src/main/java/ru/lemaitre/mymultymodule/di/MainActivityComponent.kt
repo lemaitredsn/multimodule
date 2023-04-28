@@ -3,20 +3,21 @@ package ru.lemaitre.mymultymodule.di
 import android.content.Context
 import dagger.BindsInstance
 import dagger.Component
+import ru.lemaitre.feature2.api.Feature2Deps
 import ru.lemaitre.mymultymodule.MainActivity
-import ru.lemaitre.mymultymodule.domain.AccountUseCase
-import ru.lemaitre.mymultymodule.feature2.api.Feature2Deps
+import ru.lemaitre.shared.AccountUseCase
 import javax.inject.Scope
+import javax.inject.Singleton
 
-@Scope
-annotation class MainActivityScope
+//@Scope
+//annotation class MainActivityScope
 
 @Component(
     modules = [
         Feature2DependenciesModule::class,
     ]
 )
-@MainActivityScope
+@Singleton
 interface MainActivityComponent : Feature2Deps {
     @Component.Factory
     interface Factory {
@@ -24,6 +25,7 @@ interface MainActivityComponent : Feature2Deps {
     }
 
     val accountUseCase: AccountUseCase
+    // todo нужно сделать навигацию
 
     fun inject(activity: MainActivity)
 }

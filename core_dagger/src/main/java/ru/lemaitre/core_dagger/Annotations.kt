@@ -1,4 +1,4 @@
-package ru.lemaitre.mymultymodule.core_dagger
+package ru.lemaitre.core_dagger
 
 import dagger.MapKey
 import ru.lemaitre.mymultymodule.core.Dependencies

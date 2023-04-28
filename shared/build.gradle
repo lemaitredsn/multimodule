@@ -1,20 +1,17 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
-    id 'kotlin-kapt'
 }
 
 android {
     compileSdk 30
 
     defaultConfig {
-        applicationId "ru.lemaitre.mymultymodule"
         minSdk 21
         targetSdk 30
-        versionCode 1
-        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -30,18 +27,9 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    kotlinOptions {
-        freeCompilerArgs = ['-Xjvm-default=compatibility']
-    }
 }
 
 dependencies {
-
-    //modules
-    implementation project(":features:feature2")
-    implementation project(":core")
-    implementation project(":core_dagger")
-    implementation project(":shared")
 
     implementation 'androidx.core:core-ktx:1.2.0'
     implementation 'androidx.appcompat:appcompat:1.1.0'
@@ -52,6 +40,4 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     implementation 'com.google.dagger:dagger:2.41'
-    kapt 'com.google.dagger:dagger-compiler:2.41'
-
 }

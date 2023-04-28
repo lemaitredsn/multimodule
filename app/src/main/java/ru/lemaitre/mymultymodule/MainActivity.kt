@@ -6,7 +6,7 @@ import android.util.Log
 import ru.lemaitre.mymultymodule.core.DepsMap
 import ru.lemaitre.mymultymodule.core.HasDependencies
 import ru.lemaitre.mymultymodule.di.DaggerMainActivityComponent
-import ru.lemaitre.mymultymodule.feature2.api.Feature2Fragment
+import ru.lemaitre.feature2.api.Feature2Fragment
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity(), HasDependencies {
