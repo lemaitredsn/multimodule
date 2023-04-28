@@ -3,6 +3,7 @@ package ru.lemaitre.mymultymodule
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.navigation.ui.setupActionBarWithNavController
 import ru.lemaitre.mymultymodule.core.DepsMap
 import ru.lemaitre.mymultymodule.core.HasDependencies
 import ru.lemaitre.mymultymodule.di.DaggerMainActivityComponent

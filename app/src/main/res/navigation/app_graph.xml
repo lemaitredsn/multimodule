@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/app_graph.xml"
+    app:startDestination="@id/feature2Fragment">
+
+    <fragment
+        android:id="@+id/feature2Fragment"
+        android:name="ru.lemaitre.feature2.api.Feature2Fragment"
+        android:label="Feature2Fragment" />
+
+    <fragment
+        android:id="@+id/feature3FlowFragment"
+        android:name="ru.lemaitre.feature3.internal.flow.Feature3FlowFragment"
+        android:label="Feature3FlowFragment" />
+
+</navigation>
