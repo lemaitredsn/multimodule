@@ -1,9 +1,8 @@
 package ru.lemaitre.feature2.internal.di
 
-import androidx.fragment.app.Fragment
 import dagger.Component
 import ru.lemaitre.feature2.api.Feature2Deps
-import ru.lemaitre.feature2.api.FeatureFragmentProvider
+import ru.lemaitre.feature2.api.Feature2Fragment
 
 @Component(dependencies = [Feature2Deps::class])
 interface Feature2Component {
@@ -12,7 +11,5 @@ interface Feature2Component {
         fun create(deps: Feature2Deps): Feature2Component
     }
 
-    fun provider() : FeatureFragmentProvider
-
-    fun inject(fragment: Fragment)
+    fun inject(fragment: Feature2Fragment)
 }

@@ -11,22 +11,20 @@ import androidx.fragment.app.Fragment
 import ru.lemaitre.feature2.R
 import ru.lemaitre.feature2.internal.di.DaggerFeature2Component
 import ru.lemaitre.mymultymodule.core.findDependencies
+import javax.inject.Inject
 
-class Feature2Fragment: Fragment() {
+class Feature2Fragment : Fragment() {
 
-//    @Inject
-//    internal lateinit var featureFragmentProvider: FeatureFragmentProvider //почему то inject несработал
+    @Inject
     internal lateinit var featureFragmentProvider: FeatureFragmentProvider
-
     override fun onAttach(context: Context) {
         super.onAttach(context)
 
-        featureFragmentProvider = DaggerFeature2Component.factory()
+        DaggerFeature2Component.factory()
             .create(findDependencies<Feature2Deps>())
-            .provider()
+            .inject(this)
 
         Log.e("TAG", "Feature2Fragment findDeps ${findDependencies<Feature2Deps>()}")
-
     }
 
     override fun onCreateView(
@@ -41,9 +39,9 @@ class Feature2Fragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val title = view.findViewById<TextView>(R.id.title)
 
-            title.setOnClickListener {
-                val number = featureFragmentProvider.accountUseCase.getAccountNumber()
-                title.text = number
-            }
+        title.setOnClickListener {
+            val number = featureFragmentProvider.accountUseCase.getAccountNumber()
+            title.text = number
+        }
     }
 }
