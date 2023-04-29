@@ -6,7 +6,7 @@ import moxy.MvpPresenter
 import javax.inject.Inject
 
 class Feature3FlowPresenter @Inject constructor(
-    private val flow: Feature3Flow
+    private val flow: Feature3Flow,
 ) : MvpPresenter<Feature3FlowView>() {
 
     override fun onFirstViewAttach() {

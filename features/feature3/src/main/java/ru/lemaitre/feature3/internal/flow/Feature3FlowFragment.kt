@@ -10,13 +10,18 @@ import moxy.ktx.moxyPresenter
 import ru.lemaitre.core.ComponentProvider
 import ru.lemaitre.core.scopedComponent
 import ru.lemaitre.feature3.R
+import ru.lemaitre.feature3.api.Feature3Deps
 import ru.lemaitre.feature3.internal.di.DaggerFeature3Component
 import ru.lemaitre.feature3.internal.di.Feature3Component
+import ru.lemaitre.mymultymodule.core.findDependencies
 
-class Feature3FlowFragment : MvpAppCompatFragment(), Feature3FlowView, ComponentProvider<Feature3Component> {
+class Feature3FlowFragment : MvpAppCompatFragment(), Feature3FlowView,
+    ComponentProvider<Feature3Component> {
 
     override val component: Feature3Component by scopedComponent {
-        DaggerFeature3Component.create()
+        DaggerFeature3Component
+            .factory()
+            .create(findDependencies<Feature3Deps>())
     }
 
     private val presenter by moxyPresenter {
