@@ -1,4 +1,4 @@
-package ru.lemaitre.feature3.internal.mvp
+package ru.lemaitre.feature3.internal.mvp.list
 
 import android.util.Log
 import io.reactivex.Single
@@ -7,7 +7,7 @@ import ru.lemaitre.feature3.internal.flow.Feature3Flow
 import ru.lemaitre.shared.ui.BasePresenter
 import javax.inject.Inject
 
-class ListPresenter @Inject constructor(
+internal class ListPresenter @Inject constructor(
     private val flow: Feature3Flow,
     deps: Feature3Deps
 ) : BasePresenter<ListView>() {

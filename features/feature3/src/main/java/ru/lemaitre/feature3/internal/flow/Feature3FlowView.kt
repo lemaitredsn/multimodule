@@ -4,6 +4,6 @@ import moxy.MvpView
 import moxy.viewstate.strategy.alias.OneExecution
 
 @OneExecution
-interface Feature3FlowView: MvpView {
+internal interface Feature3FlowView: MvpView {
     fun navigate(screen: Feature3Route)
 }

@@ -1,4 +1,4 @@
-package ru.lemaitre.feature3.internal.mvp
+package ru.lemaitre.feature3.internal.mvp.list
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,7 +12,7 @@ import ru.lemaitre.core.ComponentProvider
 import ru.lemaitre.feature3.R
 import ru.lemaitre.feature3.internal.di.Feature3Component
 
-class ListFragment : MvpAppCompatFragment(), ListView {
+internal class ListFragment : MvpAppCompatFragment(), ListView {
 
     private val presenter by moxyPresenter { //fixme переделать
         ComponentFinder

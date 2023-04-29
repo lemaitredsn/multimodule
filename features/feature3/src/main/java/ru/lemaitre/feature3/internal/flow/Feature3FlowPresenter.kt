@@ -5,7 +5,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import ru.lemaitre.shared.ui.BasePresenter
 import javax.inject.Inject
 
-class Feature3FlowPresenter @Inject constructor(
+internal class Feature3FlowPresenter @Inject constructor(
     private val flow: Feature3Flow,
 ) : BasePresenter<Feature3FlowView>() {
 

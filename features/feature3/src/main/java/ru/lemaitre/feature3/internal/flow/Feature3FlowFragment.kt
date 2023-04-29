@@ -15,7 +15,7 @@ import ru.lemaitre.feature3.internal.di.DaggerFeature3Component
 import ru.lemaitre.feature3.internal.di.Feature3Component
 import ru.lemaitre.mymultymodule.core.findDependencies
 
-class Feature3FlowFragment : MvpAppCompatFragment(), Feature3FlowView,
+internal class Feature3FlowFragment : MvpAppCompatFragment(), Feature3FlowView,
     ComponentProvider<Feature3Component> {
 
     override val component: Feature3Component by scopedComponent {

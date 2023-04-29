@@ -1,9 +1,9 @@
-package ru.lemaitre.feature3.internal.mvp
+package ru.lemaitre.feature3.internal.mvp.list
 
 import moxy.MvpView
 import moxy.viewstate.strategy.alias.AddToEndSingle
 
 @AddToEndSingle
-interface ListView : MvpView {
+internal interface ListView : MvpView {
     fun showAccounts(list: List<String>)
 }
