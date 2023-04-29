@@ -11,4 +11,8 @@ internal class Feature3Flow @Inject constructor() {
         BehaviorSubject.createDefault<Feature3Route>(Feature3Route.List)
 
     fun navigation() = navigationIn
+
+    fun toSuccessResult(title: String, descriptions: String, button: String) =
+        navigationIn.onNext(Feature3Route.Success(title, descriptions, button))
+
 }

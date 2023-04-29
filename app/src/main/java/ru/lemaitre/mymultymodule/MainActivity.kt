@@ -28,9 +28,5 @@ class MainActivity : AppCompatActivity(), HasDependencies {
 
         setContentView(R.layout.activity_main)
 
-//        supportFragmentManager.beginTransaction()
-//            .add(R.id.features_container, Feature2Fragment())
-//            .addToBackStack(null)
-//            .commit()
     }
 }

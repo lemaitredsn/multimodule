@@ -14,6 +14,7 @@ import ru.lemaitre.feature3.api.Feature3Deps
 import ru.lemaitre.feature3.internal.di.DaggerFeature3Component
 import ru.lemaitre.feature3.internal.di.Feature3Component
 import ru.lemaitre.mymultymodule.core.findDependencies
+import ru.lemaitre.shared.ui.result.SuccessFragmentArgs
 
 internal class Feature3FlowFragment : MvpAppCompatFragment(), Feature3FlowView,
     ComponentProvider<Feature3Component> {
@@ -42,6 +43,15 @@ internal class Feature3FlowFragment : MvpAppCompatFragment(), Feature3FlowView,
                 .navController
         when (screen) {
             Feature3Route.List -> navController.setGraph(R.navigation.feature_3_flow_nav_graph)
+            is Feature3Route.Success -> navController.navigate(
+                ru.lemaitre.shared.R.id.success_nav_graph,
+                SuccessFragmentArgs(
+                    title = screen.title,
+                    descriptions = screen.descriptions,
+                    button = screen.button,
+                    isAutoClose = true
+                ).toBundle()
+            )
         }
     }
 }

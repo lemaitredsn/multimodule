@@ -23,4 +23,12 @@ internal class ListPresenter @Inject constructor(
             })
             .untilDestroy()
     }
+
+    fun onViewClicked() {
+        flow.toSuccessResult(
+            "Успешный успех",
+            "Эта операция выполнена максимально правильно",
+            "Закрыть!"
+        )
+    }
 }

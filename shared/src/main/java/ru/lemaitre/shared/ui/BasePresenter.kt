@@ -8,9 +8,9 @@ import moxy.MvpView
 abstract class BasePresenter<T : MvpView> : MvpPresenter<T>() {
     private val container = CompositeDisposable()
 
-    override fun destroyView(view: T) {
+    override fun onDestroy() {
         container.clear()
-        super.destroyView(view)
+        super.onDestroy()
     }
 
     protected fun Disposable.untilDestroy() {

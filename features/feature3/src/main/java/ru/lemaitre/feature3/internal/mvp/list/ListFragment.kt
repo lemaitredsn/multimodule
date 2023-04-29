@@ -29,6 +29,13 @@ internal class ListFragment : MvpAppCompatFragment(), ListView {
         return layoutInflater.inflate(R.layout.fragment_list, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        view.findViewById<TextView>(R.id.listAccount).setOnClickListener {
+            presenter.onViewClicked()
+        }
+    }
+
     override fun showAccounts(list: List<String>) {
         view?.findViewById<TextView>(R.id.listAccount)?.text = list.joinToString("\n")
     }
