@@ -14,4 +14,9 @@
         android:name="ru.lemaitre.feature3.internal.flow.Feature3FlowFragment"
         android:label="Feature3FlowFragment" />
 
+    <fragment
+        android:id="@+id/chatFlowFragment"
+        android:name="ru.lemaitre.chat.internal.flow.ChatFlowFragment"
+        android:label="ChatFlowFragment" />
+
 </navigation>

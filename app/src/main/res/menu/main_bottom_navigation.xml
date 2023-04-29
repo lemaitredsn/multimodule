@@ -9,4 +9,9 @@
         android:id="@+id/feature3FlowFragment"
         android:icon="@drawable/ic_beach"
         android:title="@string/second_item" />
+
+    <item
+        android:id="@+id/chatFlowFragment"
+        android:icon="@drawable/ic_chat"
+        android:title="@string/third_item" />
 </menu>
