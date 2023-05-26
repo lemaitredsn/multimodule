@@ -11,7 +11,7 @@
 
     <fragment
         android:id="@+id/feature3FlowFragment"
-        android:name="ru.lemaitre.feature3.internal.flow.Feature3FlowFragment"
+        android:name="ru.lemaitre.feature3.feature.flow.Feature3FlowFragment"
         android:label="Feature3FlowFragment" />
 
     <fragment

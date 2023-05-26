@@ -19,7 +19,7 @@ import javax.inject.Singleton
     ]
 )
 @Singleton
-interface MainActivityComponent : Feature2Deps, Feature3Deps {
+interface MainActivityComponent : Feature2Deps, ru.lemaitre.feature3.api.Feature3Deps {
     @Component.Factory
     interface Factory {
         fun create(@BindsInstance context: Context): MainActivityComponent
