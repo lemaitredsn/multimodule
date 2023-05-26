@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.net.toUri
 import androidx.navigation.fragment.NavHostFragment
 import moxy.MvpAppCompatFragment
 import moxy.ktx.moxyPresenter
@@ -14,6 +15,9 @@ import ru.lemaitre.feature3.api.Feature3Deps
 import ru.lemaitre.feature3.internal.di.DaggerFeature3Component
 import ru.lemaitre.feature3.internal.di.Feature3Component
 import ru.lemaitre.mymultymodule.core.findDependencies
+import ru.lemaitre.shared.navigation.NavCommand
+import ru.lemaitre.shared.navigation.NavCommands
+import ru.lemaitre.shared.navigation.navigate
 import ru.lemaitre.shared.ui.result.SuccessFragmentArgs
 
 internal class Feature3FlowFragment : MvpAppCompatFragment(), Feature3FlowView,
@@ -51,6 +55,15 @@ internal class Feature3FlowFragment : MvpAppCompatFragment(), Feature3FlowView,
                     button = screen.button,
                     isAutoClose = true
                 ).toBundle()
+            )
+            Feature3Route.Chat -> navigate(
+                NavCommand(
+                    NavCommands.DeepLink(
+                        "chatbank://chat".toUri(),
+                        true,
+                        false
+                    )
+                )
             )
         }
     }

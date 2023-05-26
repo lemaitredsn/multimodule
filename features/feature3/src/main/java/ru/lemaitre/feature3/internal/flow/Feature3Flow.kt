@@ -15,4 +15,5 @@ internal class Feature3Flow @Inject constructor() {
     fun toSuccessResult(title: String, descriptions: String, button: String) =
         navigationIn.onNext(Feature3Route.Success(title, descriptions, button))
 
+    fun toChat() = navigationIn.onNext(Feature3Route.Chat)
 }

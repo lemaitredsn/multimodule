@@ -31,4 +31,8 @@ internal class ListPresenter @Inject constructor(
             "Закрыть!"
         )
     }
+
+    fun onChatClicked() {
+        flow.toChat()
+    }
 }

@@ -28,7 +28,8 @@ fun <D : Dependencies> Fragment.findDependenciesByClass(clazz: Class<D>): D {
 private val Fragment.parents: Iterable<HasDependencies>
     get() = allParents.mapNotNull { it as? HasDependencies }
 
-private val Fragment.allParents: Iterable<Any>
+// вынести в общий
+val Fragment.allParents: Iterable<Any>
     get() = object : Iterable<Any> {
         override fun iterator() = object : Iterator<Any> {
             private var currentParentFragment: Fragment? = parentFragment

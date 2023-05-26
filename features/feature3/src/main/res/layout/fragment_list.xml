@@ -9,4 +9,10 @@
         android:layout_height="wrap_content"
         android:text="List screen"
         />
+
+    <Button
+        android:id="@+id/chat"
+        android:text="перейти в чат"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 </LinearLayout>

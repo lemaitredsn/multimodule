@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import moxy.MvpAppCompatFragment
 import moxy.ktx.moxyPresenter
@@ -34,6 +35,11 @@ internal class ListFragment : MvpAppCompatFragment(), ListView {
         view.findViewById<TextView>(R.id.listAccount).setOnClickListener {
             presenter.onViewClicked()
         }
+
+        view.findViewById<Button>(R.id.chat).setOnClickListener {
+            presenter.onChatClicked()
+        }
+
     }
 
     override fun showAccounts(list: List<String>) {
