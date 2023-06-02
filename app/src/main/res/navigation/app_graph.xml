@@ -2,12 +2,12 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/app_graph.xml"
-    app:startDestination="@id/feature2Fragment">
+    app:startDestination="@id/operationFlowFragment">
 
     <fragment
-        android:id="@+id/feature2Fragment"
-        android:name="ru.lemaitre.feature2.api.Feature2Fragment"
-        android:label="Feature2Fragment" />
+        android:id="@+id/operationFlowFragment"
+        android:name="ru.lemaitre.operation.flow.OperationFlowFragment"
+        android:label="OperationFlowFragment" />
 
     <fragment
         android:id="@+id/feature3FlowFragment"
