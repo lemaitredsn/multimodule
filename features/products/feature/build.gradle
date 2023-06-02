@@ -35,9 +35,9 @@ android {
 dependencies {
     // modules
     implementation project(path: ':features:products:api')
-    implementation project(":core")
-    implementation project(":core_dagger")
-    implementation project(":shared")
+    implementation project(":common:utils")
+    implementation project(path: ':common:navigation')
+    implementation project(path: ':common:architecture')
 
     // navigation
     implementation "androidx.navigation:navigation-fragment-ktx:2.4.0-alpha01"

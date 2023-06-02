@@ -9,11 +9,12 @@ import androidx.navigation.NavOptions
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import ru.lemaitre.shared.navigation.NavCommand
-import ru.lemaitre.shared.navigation.NavCommands
-import ru.lemaitre.shared.navigation.NavigationProvider
+import ru.lemaite.common.navigation.NavCommand
+import ru.lemaite.common.navigation.NavCommands
+import ru.lemaite.common.navigation.NavigationProvider
 
-class MainFragment : Fragment(R.layout.fragment_main), NavigationProvider {
+class MainFragment : Fragment(R.layout.fragment_main),
+    ru.lemaite.common.navigation.NavigationProvider {
 
     private val navController
         get() = (childFragmentManager.findFragmentById(R.id.mainContainer) as NavHostFragment)
@@ -30,14 +31,14 @@ class MainFragment : Fragment(R.layout.fragment_main), NavigationProvider {
         }
     }
 
-    override fun launch(navCommand: NavCommand) {
+    override fun launch(navCommand: ru.lemaite.common.navigation.NavCommand) {
         when (val target = navCommand.target) {
-            is NavCommands.DeepLink -> openDeepLink(
+            is ru.lemaite.common.navigation.NavCommands.DeepLink -> openDeepLink(
                 url = target.url,
                 isModal = target.isModal,
                 isSingleTop = target.isSingleTop
             )
-            is NavCommands.Browser -> error("no implement test")
+            is ru.lemaite.common.navigation.NavCommands.Browser -> error("no implement test")
         }
     }
 

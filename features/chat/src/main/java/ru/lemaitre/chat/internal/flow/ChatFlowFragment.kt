@@ -10,11 +10,10 @@ import moxy.ktx.moxyPresenter
 import ru.lemaitre.chat.R
 import ru.lemaitre.chat.internal.di.ChatComponent
 import ru.lemaitre.chat.internal.di.DaggerChatComponent
-import ru.lemaitre.core.ComponentProvider
-import ru.lemaitre.core.scopedComponent
+import ru.lemaitre.common.utils.scopedComponent
 
 internal class ChatFlowFragment() : MvpAppCompatFragment(), ChatFlowView,
-    ComponentProvider<ChatComponent> {
+    ru.lemaitre.common.utils.ComponentProvider<ChatComponent> {
 
     override val component: ChatComponent by scopedComponent {
         DaggerChatComponent.create()

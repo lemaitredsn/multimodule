@@ -2,7 +2,7 @@ package ru.lemaitre.chat.internal.flow
 
 import android.util.Log
 import io.reactivex.android.schedulers.AndroidSchedulers
-import ru.lemaitre.shared.ui.BasePresenter
+import ru.lemaitre.architecture.BasePresenter
 import javax.inject.Inject
 
 internal class ChatFlowPresenter @Inject constructor(

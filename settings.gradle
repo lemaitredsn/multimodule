@@ -14,12 +14,13 @@ dependencyResolutionManagement {
 }
 rootProject.name = "MyMultyModule"
 include ':app'
-include ':core'
-include ':core_dagger'
-include ':shared'
 include ':features:chat'
 include ':features:products:feature'
 include ':features:products:api'
 include ':features:chat:api'
 include ':features:operations:feature'
 include ':features:operations:api'
+include ':common:utils'
+include ':common:navigation'
+include ':common:architecture'
+include ':common:result:feature'

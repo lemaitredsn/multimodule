@@ -1,12 +1,12 @@
 package ru.lemaitre.operation.flow
 
 import android.util.Log
-import ru.lemaitre.shared.ui.BasePresenter
+import ru.lemaitre.architecture.BasePresenter
 import javax.inject.Inject
 
 class OperationFlowPresenter @Inject constructor(
     private val flow: OperationFlow
-) : BasePresenter<OperationFlowView>() {
+) : ru.lemaitre.architecture.BasePresenter<OperationFlowView>() {
 
     override fun onFirstViewAttach() {
         flow.navigation()

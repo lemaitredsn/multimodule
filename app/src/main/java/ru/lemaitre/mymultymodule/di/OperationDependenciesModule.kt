@@ -3,8 +3,8 @@ package ru.lemaitre.mymultymodule.di
 import dagger.Module
 import dagger.Provides
 import dagger.multibindings.IntoMap
-import ru.lemaitre.core_dagger.DependenciesKey
-import ru.lemaitre.mymultymodule.core.Dependencies
+import ru.lemaitre.common.utils.DependenciesKey
+import ru.lemaitre.common.utils.Dependencies
 import ru.lemaitre.operations.api.OperationDeps
 
 @Module
@@ -17,6 +17,6 @@ object OperationDependenciesModule {
 
     @Provides
     @IntoMap
-    @DependenciesKey(OperationDeps::class)
-    fun bindOperationDeps(impl: MainActivityComponent): Dependencies = impl
+    @ru.lemaitre.common.utils.DependenciesKey(OperationDeps::class)
+    fun bindOperationDeps(impl: MainActivityComponent): ru.lemaitre.common.utils.Dependencies = impl
 }

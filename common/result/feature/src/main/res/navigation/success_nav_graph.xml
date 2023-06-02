@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/success_nav_graph"
+    app:startDestination="@id/successFragment">
+
+    <fragment
+        android:id="@+id/successFragment"
+        android:name="ru.lemaitre.result.SuccessFragment"
+        android:label="SuccessFragment" >
+        <argument
+            android:name="title"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="descriptions"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="button"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="isAutoClose"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
+</navigation>

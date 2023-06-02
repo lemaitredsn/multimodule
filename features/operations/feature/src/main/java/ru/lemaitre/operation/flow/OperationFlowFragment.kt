@@ -6,15 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
-import ru.lemaitre.core.ComponentProvider
-import ru.lemaitre.core.scopedComponent
-import ru.lemaitre.mymultymodule.core.findDependencies
+import ru.lemaitre.common.utils.ComponentProvider
+import ru.lemaitre.common.utils.scopedComponent
+import ru.lemaitre.common.utils.findDependencies
 import ru.lemaitre.operation.R
 import ru.lemaitre.operation.di.DaggerOperationComponent
 import ru.lemaitre.operation.di.OperationComponent
 import ru.lemaitre.operations.api.OperationDeps
 
-class OperationFlowFragment: Fragment(), OperationFlowView, ComponentProvider<OperationComponent> {
+class OperationFlowFragment: Fragment(), OperationFlowView,
+    ru.lemaitre.common.utils.ComponentProvider<OperationComponent> {
 
     override val component: OperationComponent by scopedComponent {
         DaggerOperationComponent

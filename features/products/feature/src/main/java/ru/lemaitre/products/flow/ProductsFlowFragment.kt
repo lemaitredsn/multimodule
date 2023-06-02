@@ -8,20 +8,16 @@ import androidx.core.net.toUri
 import androidx.navigation.fragment.NavHostFragment
 import moxy.MvpAppCompatFragment
 import moxy.ktx.moxyPresenter
-import ru.lemaitre.core.ComponentProvider
-import ru.lemaitre.core.scopedComponent
-import ru.lemaitre.feature3.api.ProductsDeps
-import ru.lemaitre.products.di.ProductsComponent
-import ru.lemaitre.mymultymodule.core.findDependencies
+import ru.lemaite.common.navigation.navigate
+import ru.lemaitre.common.utils.findDependencies
+import ru.lemaitre.common.utils.scopedComponent
+import ru.lemaitre.products.api.ProductsDeps
 import ru.lemaitre.products.R
 import ru.lemaitre.products.di.DaggerProductsComponent
-import ru.lemaitre.shared.navigation.NavCommand
-import ru.lemaitre.shared.navigation.NavCommands
-import ru.lemaitre.shared.navigation.navigate
-import ru.lemaitre.shared.ui.result.SuccessFragmentArgs
+import ru.lemaitre.products.di.ProductsComponent
 
 internal class ProductsFlowFragment : MvpAppCompatFragment(), ProductsFlowView,
-    ComponentProvider<ProductsComponent> {
+    ru.lemaitre.common.utils.ComponentProvider<ProductsComponent> {
 
     override val component: ProductsComponent by scopedComponent {
         DaggerProductsComponent
@@ -47,18 +43,10 @@ internal class ProductsFlowFragment : MvpAppCompatFragment(), ProductsFlowView,
                 .navController
         when (screen) {
             ProductsRoute.List -> navController.setGraph(R.navigation.feature_3_flow_nav_graph)
-            is ProductsRoute.Success -> navController.navigate(
-                ru.lemaitre.shared.R.id.success_nav_graph,
-                SuccessFragmentArgs(
-                    title = screen.title,
-                    descriptions = screen.descriptions,
-                    button = screen.button,
-                    isAutoClose = true
-                ).toBundle()
-            )
+            is ProductsRoute.Success -> TODO()
             ProductsRoute.Chat -> navigate(
-                NavCommand(
-                    NavCommands.DeepLink(
+                ru.lemaite.common.navigation.NavCommand(
+                    ru.lemaite.common.navigation.NavCommands.DeepLink(
                         "chatbank://chat".toUri(),
                         true,
                         false

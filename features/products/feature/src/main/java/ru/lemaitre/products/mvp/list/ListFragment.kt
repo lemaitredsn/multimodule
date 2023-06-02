@@ -8,8 +8,8 @@ import android.widget.Button
 import android.widget.TextView
 import moxy.MvpAppCompatFragment
 import moxy.ktx.moxyPresenter
-import ru.lemaitre.core.ComponentFinder
-import ru.lemaitre.core.ComponentProvider
+import ru.lemaitre.common.utils.ComponentFinder
+import ru.lemaitre.common.utils.ComponentProvider
 import ru.lemaitre.products.R
 import ru.lemaitre.products.di.ProductsComponent
 

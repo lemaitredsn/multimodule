@@ -3,9 +3,8 @@ package ru.lemaitre.mymultymodule.di
 import android.content.Context
 import dagger.BindsInstance
 import dagger.Component
-import ru.lemaitre.feature3.api.ProductsDeps
+import ru.lemaitre.products.api.ProductsDeps
 import ru.lemaitre.mymultymodule.MainActivity
-import ru.lemaitre.shared.AccountUseCase
 import javax.inject.Singleton
 
 //@Scope
@@ -13,7 +12,7 @@ import javax.inject.Singleton
 
 @Component(
     modules = [
-        ProductsDependenciesModule::class
+        ProductsDependenciesModule::class,
     ]
 )
 @Singleton
@@ -22,8 +21,7 @@ interface MainActivityComponent : ProductsDeps { //todo ADD operation deps
     interface Factory {
         fun create(@BindsInstance context: Context): MainActivityComponent
     }
-
-    val accountUseCase: AccountUseCase
+    val context: Context
     // todo нужно сделать навигацию
 
     fun inject(activity: MainActivity)

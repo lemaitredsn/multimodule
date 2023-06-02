@@ -1,7 +1,7 @@
 package ru.lemaitre.products.di
 
 import dagger.Component
-import ru.lemaitre.feature3.api.ProductsDeps
+import ru.lemaitre.products.api.ProductsDeps
 import ru.lemaitre.products.flow.ProductsFlowPresenter
 import ru.lemaitre.products.mvp.list.ListPresenter
 

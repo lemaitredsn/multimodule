@@ -3,15 +3,15 @@ package ru.lemaitre.mymultymodule
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import ru.lemaitre.mymultymodule.core.DepsMap
-import ru.lemaitre.mymultymodule.core.HasDependencies
+import ru.lemaitre.common.utils.DepsMap
+import ru.lemaitre.common.utils.HasDependencies
 import ru.lemaitre.mymultymodule.di.DaggerMainActivityComponent
 import javax.inject.Inject
 
-class MainActivity : AppCompatActivity(), HasDependencies {
+class MainActivity : AppCompatActivity(), ru.lemaitre.common.utils.HasDependencies {
 
     @Inject
-    override lateinit var depsMap: DepsMap
+    override lateinit var depsMap: ru.lemaitre.common.utils.DepsMap
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
