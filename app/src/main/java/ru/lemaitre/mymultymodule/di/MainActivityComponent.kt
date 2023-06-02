@@ -3,7 +3,7 @@ package ru.lemaitre.mymultymodule.di
 import android.content.Context
 import dagger.BindsInstance
 import dagger.Component
-import ru.lemaitre.feature3.api.Feature3Deps
+import ru.lemaitre.feature3.api.ProductsDeps
 import ru.lemaitre.mymultymodule.MainActivity
 import ru.lemaitre.shared.AccountUseCase
 import javax.inject.Singleton
@@ -13,11 +13,11 @@ import javax.inject.Singleton
 
 @Component(
     modules = [
-        Feature3DependenciesModule::class
+        ProductsDependenciesModule::class
     ]
 )
 @Singleton
-interface MainActivityComponent : Feature3Deps { //todo ADD operation deps
+interface MainActivityComponent : ProductsDeps { //todo ADD operation deps
     @Component.Factory
     interface Factory {
         fun create(@BindsInstance context: Context): MainActivityComponent

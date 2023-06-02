@@ -4,23 +4,23 @@ import dagger.Module
 import dagger.Provides
 import dagger.multibindings.IntoMap
 import ru.lemaitre.core_dagger.DependenciesKey
-import ru.lemaitre.feature3.api.Feature3Deps
-import ru.lemaitre.feature3.api.Feature3Provider
+import ru.lemaitre.feature3.api.ProductsDeps
+import ru.lemaitre.feature3.api.ProductsDepsProvider
 import ru.lemaitre.mymultymodule.core.Dependencies
 import ru.lemaitre.shared.AccountUseCase
 
 @Module
-object Feature3DependenciesModule {
+object ProductsDependenciesModule {
 
     @Provides
-    fun provideF3Deps(impl: MainActivityComponent): Feature3Provider {
-        return object : Feature3Provider {
+    fun provideProductsDeps(impl: MainActivityComponent): ProductsDepsProvider {
+        return object : ProductsDepsProvider {
             override val accountUseCase: AccountUseCase = impl.accountUseCase
         }
     }
 
     @Provides
     @IntoMap
-    @DependenciesKey(Feature3Deps::class)
-    fun  bindF3Deps(impl: MainActivityComponent): Dependencies = impl
+    @DependenciesKey(ProductsDeps::class)
+    fun  bindProductsDeps(impl: MainActivityComponent): Dependencies = impl
 }
