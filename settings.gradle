@@ -14,7 +14,6 @@ dependencyResolutionManagement {
 }
 rootProject.name = "MyMultyModule"
 include ':app'
-include ':features:feature2'
 include ':core'
 include ':core_dagger'
 include ':shared'

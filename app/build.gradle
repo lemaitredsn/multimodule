@@ -41,7 +41,6 @@ android {
 dependencies {
 
     // modules
-    implementation project(":features:feature2")
     implementation project(":features:feature3:api")
     implementation project(":features:feature3:feature")
     implementation project(":features:operations:feature")
