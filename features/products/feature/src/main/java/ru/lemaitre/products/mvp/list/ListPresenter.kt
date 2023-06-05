@@ -1,28 +1,28 @@
 package ru.lemaitre.products.mvp.list
 
 import android.util.Log
+import com.example.accounts.api.AccountLoader
 import io.reactivex.Single
 import ru.lemaitre.products.api.ProductsDeps
 import ru.lemaitre.products.flow.ProductsFlow
 import ru.lemaitre.architecture.BasePresenter
 import javax.inject.Inject
 
-internal class ListPresenter @Inject constructor(
+class ListPresenter @Inject constructor(
     private val flow: ProductsFlow,
     deps: ProductsDeps
 ) : BasePresenter<ListView>() {
 
-
-//    private val accountUseCase = deps.productsDepsProvider.accountUseCase
+    private val accountLoader = deps.productsDepsProvider.accountLoader
 
     override fun onFirstViewAttach() {
-//        Single.just(accountUseCase.getAccounts())
-//            .subscribe({
-//                viewState.showAccounts(it)
-//            }, {
-//                Log.e("TAG", "error load account ${it.localizedMessage}")
-//            })
-//            .untilDestroy()
+        Single.just(accountLoader.getAccounts())
+            .subscribe({
+                viewState.showAccounts(it.map { it.number })
+            }, {
+                Log.e("TAG", "error load account ${it.localizedMessage}")
+            })
+            .untilDestroy()
     }
 
     fun onViewClicked() {

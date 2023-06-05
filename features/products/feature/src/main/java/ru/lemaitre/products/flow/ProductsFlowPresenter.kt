@@ -5,7 +5,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import ru.lemaitre.architecture.BasePresenter
 import javax.inject.Inject
 
-internal class ProductsFlowPresenter @Inject constructor(
+class ProductsFlowPresenter @Inject constructor(
     private val flow: ProductsFlow,
 ) : ru.lemaitre.architecture.BasePresenter<ProductsFlowView>() {
 

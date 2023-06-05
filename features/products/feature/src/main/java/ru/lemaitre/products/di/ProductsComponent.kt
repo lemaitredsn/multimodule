@@ -7,7 +7,7 @@ import ru.lemaitre.products.mvp.list.ListPresenter
 
 @ProductsScope
 @Component(dependencies = [ProductsDeps::class])
-internal interface ProductsComponent {
+interface ProductsComponent {
 
     @Component.Factory
     interface Factory {

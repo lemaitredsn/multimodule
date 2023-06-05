@@ -13,7 +13,7 @@ import ru.lemaitre.common.utils.ComponentProvider
 import ru.lemaitre.products.R
 import ru.lemaitre.products.di.ProductsComponent
 
-internal class ListFragment : MvpAppCompatFragment(), ListView {
+class ListFragment : MvpAppCompatFragment(), ListView {
 
     private val presenter by moxyPresenter { //fixme переделать
         ComponentFinder
