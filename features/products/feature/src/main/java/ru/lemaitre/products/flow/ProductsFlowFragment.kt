@@ -19,7 +19,7 @@ import ru.lemaitre.products.api.ProductsDeps
 import ru.lemaitre.products.di.DaggerProductsComponent
 import ru.lemaitre.products.di.ProductsComponent
 
-class ProductsFlowFragment : MvpAppCompatFragment(), ProductsFlowView,
+internal class ProductsFlowFragment : MvpAppCompatFragment(), ProductsFlowView,
     ru.lemaitre.common.utils.ComponentProvider<ProductsComponent> {
 
     override val component: ProductsComponent by scopedComponent {

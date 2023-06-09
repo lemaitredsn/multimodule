@@ -7,7 +7,7 @@ import javax.inject.Scope
 
 @OperationScope
 @Component(dependencies = [OperationDeps::class])
-interface OperationComponent {
+internal interface OperationComponent {
 
     @Component.Factory
     interface Factory {

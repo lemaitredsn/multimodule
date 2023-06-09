@@ -4,7 +4,7 @@ import android.util.Log
 import ru.lemaitre.architecture.BasePresenter
 import javax.inject.Inject
 
-class ChatFlowPresenter @Inject constructor(
+internal class ChatFlowPresenter @Inject constructor(
     private val flow: ChatFlow
 ): BasePresenter<ChatFlowView>() {
 

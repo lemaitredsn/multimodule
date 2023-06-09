@@ -1,4 +1,4 @@
 package ru.lemaitre.operation.mvp
 
-class OperationPresenter {
+internal class OperationPresenter {
 }

@@ -2,7 +2,7 @@ package ru.lemaitre.products.mvp.list
 
 import androidx.annotation.DrawableRes
 
-data class ProductUiModel(
+internal data class ProductUiModel(
     val id: String,
     val number: String,
     val amount: String,

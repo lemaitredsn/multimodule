@@ -5,7 +5,7 @@ import ru.lemaitre.products.di.ProductsScope
 import javax.inject.Inject
 
 @ProductsScope
-class ProductsFlow @Inject constructor() {
+internal class ProductsFlow @Inject constructor() {
 
     private val navigationIn =
         BehaviorSubject.createDefault<ProductsRoute>(ProductsRoute.List)

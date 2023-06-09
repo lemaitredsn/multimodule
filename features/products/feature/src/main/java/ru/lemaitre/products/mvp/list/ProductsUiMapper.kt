@@ -5,7 +5,7 @@ import ru.lemaitre.common.utils.ResourceManager
 import ru.lemaitre.uikit.R
 import javax.inject.Inject
 
-class ProductsUiMapper @Inject constructor(
+internal class ProductsUiMapper @Inject constructor(
     val resourceManager: ResourceManager
 ) {
 

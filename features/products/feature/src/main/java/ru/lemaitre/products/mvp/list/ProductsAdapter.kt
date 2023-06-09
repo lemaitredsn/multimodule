@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import ru.lemaitre.uikit.R
 
-class ProductsAdapter(private val onItemClick: (ProductUiModel) -> Unit) :
+internal class ProductsAdapter(private val onItemClick: (ProductUiModel) -> Unit) :
     ListAdapter<ProductUiModel, ProductsAdapter.ProductViewHolder>(DiffUtilProductUi) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
@@ -38,7 +38,7 @@ class ProductsAdapter(private val onItemClick: (ProductUiModel) -> Unit) :
     }
 }
 
-object DiffUtilProductUi : DiffUtil.ItemCallback<ProductUiModel>() {
+internal object DiffUtilProductUi : DiffUtil.ItemCallback<ProductUiModel>() {
     override fun areItemsTheSame(oldItem: ProductUiModel, newItem: ProductUiModel): Boolean =
         oldItem.id == newItem.id
 

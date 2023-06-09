@@ -5,7 +5,7 @@ import io.reactivex.subjects.BehaviorSubject
 import javax.inject.Inject
 
 @ChatScope
-class ChatFlow @Inject constructor() {
+internal class ChatFlow @Inject constructor() {
 
     val navigation = BehaviorSubject.createDefault(ChatRoute.Main)
 }

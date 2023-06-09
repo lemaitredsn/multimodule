@@ -7,7 +7,7 @@ import ru.lemaitre.products.api.ProductsDeps
 import ru.lemaitre.products.flow.ProductsFlow
 import javax.inject.Inject
 
-class ListPresenter @Inject constructor(
+internal class ListPresenter @Inject constructor(
     private val flow: ProductsFlow,
     private val mapper: ProductsUiMapper,
     private val deps: ProductsDeps

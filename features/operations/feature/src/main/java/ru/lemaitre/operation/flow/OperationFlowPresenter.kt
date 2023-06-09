@@ -4,7 +4,7 @@ import android.util.Log
 import ru.lemaitre.architecture.BasePresenter
 import javax.inject.Inject
 
-class OperationFlowPresenter @Inject constructor(
+internal class OperationFlowPresenter @Inject constructor(
     private val flow: OperationFlow
 ) : ru.lemaitre.architecture.BasePresenter<OperationFlowView>() {
 

@@ -14,8 +14,8 @@ import ru.lemaitre.operation.di.DaggerOperationComponent
 import ru.lemaitre.operation.di.OperationComponent
 import ru.lemaitre.operations.api.OperationDeps
 
-class OperationFlowFragment: Fragment(), OperationFlowView,
-    ru.lemaitre.common.utils.ComponentProvider<OperationComponent> {
+internal class OperationFlowFragment: Fragment(), OperationFlowView,
+    ComponentProvider<OperationComponent> {
 
     override val component: OperationComponent by scopedComponent {
         DaggerOperationComponent

@@ -1,5 +1,5 @@
 package com.chat.feature.flow
 
-sealed class ChatRoute {
+internal sealed class ChatRoute {
     object Main: ChatRoute()
 }

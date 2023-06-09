@@ -1,4 +1,4 @@
 package ru.lemaitre.operation.mvp
 
-class OperationView {
+internal class OperationView {
 }

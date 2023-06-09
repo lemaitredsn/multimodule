@@ -7,7 +7,7 @@ import javax.inject.Scope
 
 @ChatScope
 @Component(dependencies = [ChatDeps::class])
-interface ChatComponent {
+internal interface ChatComponent {
     @Component.Factory
     interface Factory {
         fun create(deps: ChatDeps) : ChatComponent

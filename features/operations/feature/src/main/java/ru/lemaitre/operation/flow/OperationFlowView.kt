@@ -4,6 +4,6 @@ import moxy.MvpView
 import moxy.viewstate.strategy.alias.OneExecution
 
 @OneExecution
-interface OperationFlowView: MvpView {
+internal interface OperationFlowView: MvpView {
     fun navigate(screen: OperationFlowRouter)
 }

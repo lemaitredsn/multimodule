@@ -14,7 +14,7 @@ import ru.lemaitre.common.utils.ComponentProvider
 import ru.lemaitre.common.utils.findDependencies
 import ru.lemaitre.common.utils.scopedComponent
 
-class ChatFlowFragment() : MvpAppCompatFragment(), ChatFlowView,
+internal class ChatFlowFragment() : MvpAppCompatFragment(), ChatFlowView,
     ComponentProvider<ChatComponent> {
 
     override val component: ChatComponent by scopedComponent {
