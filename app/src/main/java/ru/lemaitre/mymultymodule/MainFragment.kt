@@ -13,8 +13,7 @@ import ru.lemaite.common.navigation.NavCommand
 import ru.lemaite.common.navigation.NavCommands
 import ru.lemaite.common.navigation.NavigationProvider
 
-class MainFragment : Fragment(R.layout.fragment_main),
-    ru.lemaite.common.navigation.NavigationProvider {
+class MainFragment : Fragment(R.layout.fragment_main), NavigationProvider {
 
     private val navController
         get() = (childFragmentManager.findFragmentById(R.id.mainContainer) as NavHostFragment)
@@ -31,14 +30,15 @@ class MainFragment : Fragment(R.layout.fragment_main),
         }
     }
 
-    override fun launch(navCommand: ru.lemaite.common.navigation.NavCommand) {
+    override fun launch(navCommand: NavCommand) {
         when (val target = navCommand.target) {
-            is ru.lemaite.common.navigation.NavCommands.DeepLink -> openDeepLink(
+            is NavCommands.Activity -> requireActivity().startActivity(target.intent)
+            is NavCommands.DeepLink -> openDeepLink(
                 url = target.url,
                 isModal = target.isModal,
                 isSingleTop = target.isSingleTop
             )
-            is ru.lemaite.common.navigation.NavCommands.Browser -> error("no implement test")
+            is NavCommands.Browser -> error("no implement test")
         }
     }
 
@@ -54,11 +54,7 @@ class MainFragment : Fragment(R.layout.fragment_main),
                 .setPopUpTo(if (isSingleTop) R.id.app_graph_xml else -1, inclusive = isSingleTop)
                 .build()
         }
-
-        // fixme для теста прокидываю просто id, скорее всего если юзать флоу то лучше передавать id
-        //  так как id из одного модуля неизвестен в другом, то необходимо где-то хранить id и знать о нем из всех мест
-        //  поэтому нужно создать ресурс навигации и юзать его из всех таких мест и вместо @+id юзать @id
-        //  ну а внутри флоу реализовать логику навигации требуюмую для конкретной бизнес задачи
+        //fixme тест
         navController
             .navigate(R.id.chatFlowFragment, null, navOptions)
     }

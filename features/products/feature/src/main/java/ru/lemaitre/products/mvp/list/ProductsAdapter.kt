@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import ru.lemaitre.products.R
+import ru.lemaitre.uikit.R
 
 class ProductsAdapter(private val onItemClick: (ProductUiModel) -> Unit) :
     ListAdapter<ProductUiModel, ProductsAdapter.ProductViewHolder>(DiffUtilProductUi) {

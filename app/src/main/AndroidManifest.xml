@@ -19,6 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="ru.lemaitre.account_details.flow.AccountDetailsFlowActivity"/>
     </application>
 
 </manifest>

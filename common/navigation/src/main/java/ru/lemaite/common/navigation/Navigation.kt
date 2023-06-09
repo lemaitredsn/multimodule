@@ -1,5 +1,6 @@
 package ru.lemaite.common.navigation
 
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -23,6 +24,8 @@ sealed class NavCommands {
         val isModal: Boolean,
         val isSingleTop: Boolean = false
     ) : NavCommands()
+
+    data class Activity(val intent: Intent): NavCommands()
 }
 
 fun Fragment.navigate(navCommand: NavCommand) {

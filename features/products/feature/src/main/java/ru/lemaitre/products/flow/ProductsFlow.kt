@@ -16,4 +16,6 @@ class ProductsFlow @Inject constructor() {
         navigationIn.onNext(ProductsRoute.Success(title, descriptions, button))
 
     fun toChat() = navigationIn.onNext(ProductsRoute.Chat)
+    fun toAccountDetails(id: String, activityDetails: Class<*>, extra: String) =
+        navigationIn.onNext(ProductsRoute.AccountDetails(id, activityDetails, extra))
 }

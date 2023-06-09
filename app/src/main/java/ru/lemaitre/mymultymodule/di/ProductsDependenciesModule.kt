@@ -4,6 +4,7 @@ import com.example.accounts.api.AccountLoader
 import dagger.Module
 import dagger.Provides
 import dagger.multibindings.IntoMap
+import ru.lemaitre.account_details.flow.AccountDetailsFlowActivity
 import ru.lemaitre.common.utils.Dependencies
 import ru.lemaitre.common.utils.DependenciesKey
 import ru.lemaitre.products.api.ProductsDeps
@@ -16,6 +17,8 @@ object ProductsDependenciesModule {
     fun provideProductsDeps(impl: AppComponent): ProductsDepsProvider =
         object : ProductsDepsProvider {
             override val accountLoader: AccountLoader = impl.getAccountLoader()
+            override val activityDetails: Class<*> = AccountDetailsFlowActivity::class.java
+            override val extra: String = AccountDetailsFlowActivity.EXTRA_ID
         }
 
     @Provides

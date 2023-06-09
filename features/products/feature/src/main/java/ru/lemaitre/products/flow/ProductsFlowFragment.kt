@@ -1,5 +1,6 @@
 package ru.lemaitre.products.flow
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,11 +9,13 @@ import androidx.core.net.toUri
 import androidx.navigation.fragment.NavHostFragment
 import moxy.MvpAppCompatFragment
 import moxy.ktx.moxyPresenter
+import ru.lemaite.common.navigation.NavCommand
+import ru.lemaite.common.navigation.NavCommands
 import ru.lemaite.common.navigation.navigate
 import ru.lemaitre.common.utils.findDependencies
 import ru.lemaitre.common.utils.scopedComponent
-import ru.lemaitre.products.api.ProductsDeps
 import ru.lemaitre.products.R
+import ru.lemaitre.products.api.ProductsDeps
 import ru.lemaitre.products.di.DaggerProductsComponent
 import ru.lemaitre.products.di.ProductsComponent
 
@@ -45,14 +48,21 @@ class ProductsFlowFragment : MvpAppCompatFragment(), ProductsFlowView,
             ProductsRoute.List -> navController.setGraph(R.navigation.feature_3_flow_nav_graph)
             is ProductsRoute.Success -> TODO()
             ProductsRoute.Chat -> navigate(
-                ru.lemaite.common.navigation.NavCommand(
-                    ru.lemaite.common.navigation.NavCommands.DeepLink(
+                NavCommand(
+                    NavCommands.DeepLink(
                         "chatbank://chat".toUri(),
                         true,
                         false
                     )
                 )
             )
+            is ProductsRoute.AccountDetails -> {
+                navigate(
+                    NavCommand(
+                        NavCommands.Activity(Intent(requireActivity(), screen.activityDetails).putExtra(screen.extra, screen.id))
+                    )
+                )
+            }
         }
     }
 }

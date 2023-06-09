@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_details_nav_graph"
+    app:startDestination="@id/accountDetailsFlowFragment">
+
+    <fragment
+        android:id="@+id/accountDetailsFlowFragment"
+        android:name="ru.lemaitre.account_details.flow.AccountDetailsFlowFragment"
+        android:label="AccountDetailsFlowFragment" >
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
+</navigation>

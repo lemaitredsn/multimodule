@@ -38,7 +38,7 @@ class ListFragment : MvpAppCompatFragment(), ListView {
         }
 
         view.findViewById<RecyclerView>(R.id.listAccount).adapter = ProductsAdapter {
-            Toast.makeText(requireActivity(), "$it", Toast.LENGTH_SHORT).show()
+            presenter.onProductItemClicked(it.id)
         }
 
     }

@@ -34,10 +34,11 @@ android {
 
 dependencies {
     // modules
-    api project(path: ':features:products:api')
+    api project(":features:products:api")
     implementation project(":common:utils")
-    implementation project(path: ':common:navigation')
-    implementation project(path: ':common:architecture')
+    implementation project(":common:navigation")
+    implementation project(":common:architecture")
+    implementation project(":common:uikit")
 
     // navigation
     implementation "androidx.navigation:navigation-fragment-ktx:2.4.0-alpha01"

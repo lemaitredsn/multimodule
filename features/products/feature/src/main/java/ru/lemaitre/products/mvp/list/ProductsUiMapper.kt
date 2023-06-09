@@ -2,7 +2,7 @@ package ru.lemaitre.products.mvp.list
 
 import com.example.accounts.api.Account
 import ru.lemaitre.common.utils.ResourceManager
-import ru.lemaitre.products.R
+import ru.lemaitre.uikit.R
 import javax.inject.Inject
 
 class ProductsUiMapper @Inject constructor(

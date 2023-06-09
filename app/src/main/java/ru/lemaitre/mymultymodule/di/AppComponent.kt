@@ -5,6 +5,7 @@ import com.example.accounts.api.AccountLoader
 import com.example.api.ChatDeps
 import dagger.BindsInstance
 import dagger.Component
+import ru.lemaitre.account_details.api.AccountDetailsDeps
 import ru.lemaitre.common.utils.ResourceManager
 import ru.lemaitre.mymultymodule.MultiModuleApp
 import ru.lemaitre.products.api.ProductsDeps
@@ -13,13 +14,14 @@ import javax.inject.Singleton
 
 @Component(
     modules = [
-        ProductsDependenciesModule::class,
         AccountDepsModule::class,
-        AppModule::class
+        AppModule::class,
+        AccountDetailsDependenciesModule::class,
+        ProductsDependenciesModule::class,
     ]
 )
 @Singleton
-interface AppComponent : ProductsDeps {
+interface AppComponent : ProductsDeps, AccountDetailsDeps {
     @Component.Factory
     interface Factory {
         fun create(@BindsInstance context: Context): AppComponent

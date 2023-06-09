@@ -10,13 +10,13 @@ import javax.inject.Inject
 class ListPresenter @Inject constructor(
     private val flow: ProductsFlow,
     private val mapper: ProductsUiMapper,
-    deps: ProductsDeps
+    private val deps: ProductsDeps
 ) : BasePresenter<ListView>() {
 
     private val accountLoader = deps.productsDepsProvider.accountLoader
 
     override fun onFirstViewAttach() {
-        Single.just(accountLoader.getAccounts())
+        accountLoader.getAccounts()
             .subscribe({ accounts ->
                 viewState.showAccounts(accounts.map { mapper.map(it) })
             }, {
@@ -35,5 +35,11 @@ class ListPresenter @Inject constructor(
 
     fun onChatClicked() {
         flow.toChat()
+    }
+
+    fun onProductItemClicked(id: String) {
+        val activityDetails = deps.productsDepsProvider.activityDetails
+        val extra = deps.productsDepsProvider.extra
+        flow.toAccountDetails(id, activityDetails, extra)
     }
 }

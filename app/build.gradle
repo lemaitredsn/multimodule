@@ -41,12 +41,13 @@ android {
 dependencies {
 
     // modules
-    implementation project(":common:accounts:feature")
     implementation project(":features:products:feature")
     implementation project(":features:operations:feature")
     implementation project(":features:chat:feature")
+    implementation project(":features:account_details:features")
     implementation project(":common:utils")
-    implementation project(path: ':common:navigation')
+    implementation project(":common:accounts:feature")
+    implementation project(":common:navigation")
 
     // navigation
     implementation "androidx.navigation:navigation-fragment-ktx:2.4.0-alpha01"

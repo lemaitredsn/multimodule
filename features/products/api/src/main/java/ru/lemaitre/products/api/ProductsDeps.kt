@@ -11,4 +11,6 @@ interface ProductsDeps : Dependencies {
 
 interface ProductsDepsProvider {
     val accountLoader: AccountLoader
+    val activityDetails: Class<*>
+    val extra: String
 }
