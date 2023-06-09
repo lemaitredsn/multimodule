@@ -27,7 +27,7 @@ class MainFragment : Fragment(R.layout.fragment_main),
         bottomNavigationView.setupWithNavController(navController)
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
-            bottomNavigationView.isVisible = destination.id != R.id.chatFlowFragment
+//            bottomNavigationView.isVisible = destination.id != R.id.chatFlowFragment
         }
     }
 

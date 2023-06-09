@@ -5,10 +5,10 @@ import javax.inject.Inject
 class SourceApi @Inject constructor() {
     fun loadAccountApi(): List<AccountApi> =
         listOf(
-            AccountApi("1234 1234 1324 1231", "текущий", 1.1),
-            AccountApi("1234 1234 1324 1232", "расчетный", 22.1),
-            AccountApi("1234 1234 1324 1233", "новый", 33.1),
-            AccountApi("1234 1234 1324 1234", "любимый", 444.1),
-            AccountApi("1234 1234 1324 1235", "ведущий", 5555.1),
+            AccountApi("1234123413241231", "cur", 1.1, "r"),
+            AccountApi("1234123413241232", "cur", 22.1, "d"),
+            AccountApi("1234123413241233", "cur", 33.1, "d"),
+            AccountApi("1234123413241234", "m", 444.1, "r"),
+            AccountApi("1234123413241235", "m", 5555.1, "d"),
         )
 }

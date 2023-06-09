@@ -5,5 +5,5 @@ import moxy.viewstate.strategy.alias.AddToEndSingle
 
 @AddToEndSingle
 interface ListView : MvpView {
-    fun showAccounts(list: List<String>)
+    fun showAccounts(list: List<ProductUiModel>)
 }

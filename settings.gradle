@@ -14,7 +14,6 @@ dependencyResolutionManagement {
 }
 rootProject.name = "MyMultyModule"
 include ':app'
-include ':features:chat'
 include ':features:products:feature'
 include ':features:products:api'
 include ':features:chat:api'
@@ -26,3 +25,4 @@ include ':common:architecture'
 include ':common:result:feature'
 include ':common:accounts:feature'
 include ':common:accounts:api'
+include ':features:chat:feature'

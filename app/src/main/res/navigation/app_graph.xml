@@ -16,7 +16,7 @@
 
     <fragment
         android:id="@+id/chatFlowFragment"
-        android:name="ru.lemaitre.chat.internal.flow.ChatFlowFragment"
+        android:name="com.chat.feature.flow.ChatFlowFragment"
         android:label="ChatFlowFragment" />
 
 </navigation>

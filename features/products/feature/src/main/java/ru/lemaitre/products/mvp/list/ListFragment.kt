@@ -5,7 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.TextView
+import android.widget.Toast
+import androidx.recyclerview.widget.RecyclerView
 import moxy.MvpAppCompatFragment
 import moxy.ktx.moxyPresenter
 import ru.lemaitre.common.utils.ComponentFinder
@@ -15,7 +16,7 @@ import ru.lemaitre.products.di.ProductsComponent
 
 class ListFragment : MvpAppCompatFragment(), ListView {
 
-    private val presenter by moxyPresenter { //fixme переделать
+    private val presenter by moxyPresenter {
         ComponentFinder
             .find<ComponentProvider<ProductsComponent>>(this)
             .component
@@ -32,17 +33,19 @@ class ListFragment : MvpAppCompatFragment(), ListView {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        view.findViewById<TextView>(R.id.listAccount).setOnClickListener {
-            presenter.onViewClicked()
-        }
-
         view.findViewById<Button>(R.id.chat).setOnClickListener {
             presenter.onChatClicked()
         }
 
+        view.findViewById<RecyclerView>(R.id.listAccount).adapter = ProductsAdapter {
+            Toast.makeText(requireActivity(), "$it", Toast.LENGTH_SHORT).show()
+        }
+
     }
 
-    override fun showAccounts(list: List<String>) {
-        view?.findViewById<TextView>(R.id.listAccount)?.text = list.joinToString("\n")
+    override fun showAccounts(list: List<ProductUiModel>) {
+        (view?.findViewById<RecyclerView>(R.id.listAccount)?.adapter as? ProductsAdapter)?.submitList(
+            list
+        )
     }
 }
