@@ -6,21 +6,29 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
+import moxy.MvpAppCompatFragment
+import moxy.ktx.moxyPresenter
 import ru.lemaitre.common.utils.ComponentProvider
-import ru.lemaitre.common.utils.scopedComponent
 import ru.lemaitre.common.utils.findDependencies
+import ru.lemaitre.common.utils.scopedComponent
 import ru.lemaitre.operation.R
 import ru.lemaitre.operation.di.DaggerOperationComponent
 import ru.lemaitre.operation.di.OperationComponent
+import ru.lemaitre.operation.mvp.operation.OperationFragmentDirections
 import ru.lemaitre.operations.api.OperationDeps
 
-internal class OperationFlowFragment: Fragment(), OperationFlowView,
+internal class OperationFlowFragment : MvpAppCompatFragment(), OperationFlowView,
     ComponentProvider<OperationComponent> {
 
     override val component: OperationComponent by scopedComponent {
         DaggerOperationComponent
             .factory()
             .create(findDependencies<OperationDeps>())
+    }
+
+    private val presenter by moxyPresenter {
+        component
+            .provideFlowPresenter()
     }
 
     override fun onCreateView(
@@ -36,8 +44,9 @@ internal class OperationFlowFragment: Fragment(), OperationFlowView,
             (childFragmentManager.findFragmentById(R.id.operation_container) as NavHostFragment)
                 .navController
 
-        when(screen) {
+        when (screen) {
             OperationFlowRouter.Main -> navController.setGraph(R.navigation.operation_flow_nav_graph)
+            OperationFlowRouter.Pay -> navController.navigate(OperationFragmentDirections.toPay())
         }
     }
 }

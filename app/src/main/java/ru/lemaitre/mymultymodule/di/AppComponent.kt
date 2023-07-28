@@ -8,6 +8,7 @@ import dagger.Component
 import ru.lemaitre.account_details.api.AccountDetailsDeps
 import ru.lemaitre.common.utils.ResourceManager
 import ru.lemaitre.mymultymodule.MultiModuleApp
+import ru.lemaitre.operations.api.OperationDeps
 import ru.lemaitre.products.api.ProductsDeps
 import javax.inject.Singleton
 
@@ -18,10 +19,11 @@ import javax.inject.Singleton
         AppModule::class,
         AccountDetailsDependenciesModule::class,
         ProductsDependenciesModule::class,
+        OperationDependenciesModule::class
     ]
 )
 @Singleton
-interface AppComponent : ProductsDeps, AccountDetailsDeps {
+interface AppComponent : ProductsDeps, AccountDetailsDeps, OperationDeps {
     @Component.Factory
     interface Factory {
         fun create(@BindsInstance context: Context): AppComponent

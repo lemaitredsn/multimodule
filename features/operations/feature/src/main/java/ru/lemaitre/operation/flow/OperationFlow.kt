@@ -1,11 +1,13 @@
 package ru.lemaitre.operation.flow
 
 import io.reactivex.subjects.BehaviorSubject
+import ru.lemaitre.operation.di.OperationScope
 import javax.inject.Inject
 
-internal class OperationFlow @Inject constructor() {
+internal class OperationFlow {
 
-    private val navigationIn = BehaviorSubject.createDefault(OperationFlowRouter.Main)
+    private val navigationIn = BehaviorSubject.createDefault<OperationFlowRouter>(OperationFlowRouter.Main)
 
     fun navigation() = navigationIn
+    fun toPay() = navigationIn.onNext(OperationFlowRouter.Pay)
 }

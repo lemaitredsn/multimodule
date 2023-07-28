@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/operation_flow_nav_graph"
     app:startDestination="@id/operationFragment">
 
     <fragment
         android:id="@+id/operationFragment"
-        android:name="ru.lemaitre.operation.mvp.OperationFragment"
-        android:label="OperationFragment" />
+        android:name="ru.lemaitre.operation.mvp.operation.OperationFragment"
+        android:label="OperationFragment"
+        tools:layout="@layout/fragment_operation"
+        >
+        <action
+            android:id="@+id/toPay"
+            app:destination="@id/payFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/payFragment"
+        android:name="ru.lemaitre.operation.mvp.pay.PayFragment"
+        android:label="PayFragment"
+        tools:layout="@layout/fragment_pay"
+        />
 </navigation>

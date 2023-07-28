@@ -1,17 +1,21 @@
 package ru.lemaitre.operation.flow
 
 import android.util.Log
+import io.reactivex.android.schedulers.AndroidSchedulers
 import ru.lemaitre.architecture.BasePresenter
 import javax.inject.Inject
 
 internal class OperationFlowPresenter @Inject constructor(
     private val flow: OperationFlow
-) : ru.lemaitre.architecture.BasePresenter<OperationFlowView>() {
+) : BasePresenter<OperationFlowView>() {
 
     override fun onFirstViewAttach() {
         flow.navigation()
+            .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
-                viewState::navigate,
+                { it ->
+                    viewState.navigate(it)
+                },
                 ::errorNavigation
             )
             .untilDestroy()
