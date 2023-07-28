@@ -10,4 +10,7 @@ internal class OperationFlow {
 
     fun navigation() = navigationIn
     fun toPay() = navigationIn.onNext(OperationFlowRouter.Pay)
+    fun success(message: String) {
+        navigationIn.onNext(OperationFlowRouter.Success(message))
+    }
 }

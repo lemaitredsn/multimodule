@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
 import moxy.MvpAppCompatFragment
 import moxy.ktx.moxyPresenter
@@ -16,6 +15,7 @@ import ru.lemaitre.operation.di.DaggerOperationComponent
 import ru.lemaitre.operation.di.OperationComponent
 import ru.lemaitre.operation.mvp.operation.OperationFragmentDirections
 import ru.lemaitre.operations.api.OperationDeps
+import ru.lemaitre.result.SuccessFragmentArgs
 
 internal class OperationFlowFragment : MvpAppCompatFragment(), OperationFlowView,
     ComponentProvider<OperationComponent> {
@@ -47,6 +47,16 @@ internal class OperationFlowFragment : MvpAppCompatFragment(), OperationFlowView
         when (screen) {
             OperationFlowRouter.Main -> navController.setGraph(R.navigation.operation_flow_nav_graph)
             OperationFlowRouter.Pay -> navController.navigate(OperationFragmentDirections.toPay())
+            is OperationFlowRouter.Success -> navController
+                .navigate(
+                    ru.lemaitre.result.R.id.success_nav_graph,
+                    SuccessFragmentArgs(
+                        title = screen.message,
+                        descriptions = null,
+                        button = null,
+                        isAutoClose = true
+                    ).toBundle()
+                )
         }
     }
 }
