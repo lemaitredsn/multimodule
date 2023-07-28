@@ -5,6 +5,7 @@ import com.example.accounts.api.AccountLoader
 import com.example.api.ChatDeps
 import dagger.BindsInstance
 import dagger.Component
+import lemaitre.simplepay.api.SimplePayDeps
 import ru.lemaitre.account_details.api.AccountDetailsDeps
 import ru.lemaitre.common.utils.ResourceManager
 import ru.lemaitre.mymultymodule.MultiModuleApp
@@ -19,11 +20,12 @@ import javax.inject.Singleton
         AppModule::class,
         AccountDetailsDependenciesModule::class,
         ProductsDependenciesModule::class,
-        OperationDependenciesModule::class
+        OperationDependenciesModule::class,
+        SimplePayDepsModule::class
     ]
 )
 @Singleton
-interface AppComponent : ProductsDeps, AccountDetailsDeps, OperationDeps {
+interface AppComponent : ProductsDeps, AccountDetailsDeps, OperationDeps, SimplePayDeps {
     @Component.Factory
     interface Factory {
         fun create(@BindsInstance context: Context): AppComponent

@@ -1,7 +1,7 @@
-package ru.lemaitre.operation.data
+package lemaite.simplepay.data
 
 import io.reactivex.Single
-import ru.lemaitre.operation.domain.PayRepository
+import lemaite.simplepay.domain.PayRepository
 
 class PayNetworkRepository: PayRepository {
     override fun execute(amount: String): Single<String> = Single

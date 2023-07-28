@@ -1,11 +1,11 @@
-package ru.lemaitre.operation.mvp.pay
+package lemaite.simplepay.mvp
 
 import moxy.MvpView
 import moxy.viewstate.strategy.alias.AddToEndSingle
 import moxy.viewstate.strategy.alias.OneExecution
 
 @AddToEndSingle
-internal interface PayView: MvpView {
+interface PayView: MvpView {
 
     @OneExecution
     fun showError()

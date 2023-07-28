@@ -36,4 +36,8 @@ class AccountDetailsPresenter @Inject constructor(
             )
             .untilDestroy()
     }
+
+    fun onCreatePayClicked() {
+        flow.toSimplePay(flow.accountId)
+    }
 }

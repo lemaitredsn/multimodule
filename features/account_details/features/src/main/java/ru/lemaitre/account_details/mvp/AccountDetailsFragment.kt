@@ -33,8 +33,12 @@ class AccountDetailsFragment : MvpAppCompatFragment(), AccountDetailsView {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.history.adapter = HistoryAdapter()
-
+        with(binding) {
+            history.adapter = HistoryAdapter()
+            createPay.setOnClickListener {
+                presenter.onCreatePayClicked()
+            }
+        }
     }
 
     override fun setAccount(account: Account) {

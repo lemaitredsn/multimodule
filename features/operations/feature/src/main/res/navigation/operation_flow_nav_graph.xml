@@ -9,17 +9,6 @@
         android:id="@+id/operationFragment"
         android:name="ru.lemaitre.operation.mvp.operation.OperationFragment"
         android:label="OperationFragment"
-        tools:layout="@layout/fragment_operation"
-        >
-        <action
-            android:id="@+id/toPay"
-            app:destination="@id/payFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/payFragment"
-        android:name="ru.lemaitre.operation.mvp.pay.PayFragment"
-        android:label="PayFragment"
-        tools:layout="@layout/fragment_pay"
-        />
+        tools:layout="@layout/fragment_operation" />
     <include app:graph="@navigation/success_nav_graph" />
 </navigation>

@@ -20,6 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name="ru.lemaitre.account_details.flow.AccountDetailsFlowActivity"/>
+        <activity android:name="lemaite.simplepay.flow.SimplePayFlowActivity"/>
     </application>
 
 </manifest>

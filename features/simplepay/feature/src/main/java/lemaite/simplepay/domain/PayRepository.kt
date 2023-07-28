@@ -1,4 +1,4 @@
-package ru.lemaitre.operation.domain
+package lemaite.simplepay.domain
 
 import io.reactivex.Single
 

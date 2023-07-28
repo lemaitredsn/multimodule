@@ -6,7 +6,8 @@ import javax.inject.Inject
 
 @AccountDetailsScope
 class AccountDetailsFlow @Inject constructor() {
-
     var accountId: String = ""
+
     val navigationIn = PublishSubject.create<AccountDetailsRouter>()
+    fun toSimplePay(accountId: String) = navigationIn.onNext(AccountDetailsRouter.SimplePay(accountId))
 }

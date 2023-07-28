@@ -1,5 +1,6 @@
 package ru.lemaitre.operation.flow
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,15 +8,17 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.NavHostFragment
 import moxy.MvpAppCompatFragment
 import moxy.ktx.moxyPresenter
+import ru.lemaite.common.navigation.NavCommand
+import ru.lemaite.common.navigation.NavCommands
 import ru.lemaitre.common.utils.ComponentProvider
 import ru.lemaitre.common.utils.findDependencies
 import ru.lemaitre.common.utils.scopedComponent
 import ru.lemaitre.operation.R
 import ru.lemaitre.operation.di.DaggerOperationComponent
 import ru.lemaitre.operation.di.OperationComponent
-import ru.lemaitre.operation.mvp.operation.OperationFragmentDirections
 import ru.lemaitre.operations.api.OperationDeps
 import ru.lemaitre.result.SuccessFragmentArgs
+import ru.lemaite.common.navigation.navigate
 
 internal class OperationFlowFragment : MvpAppCompatFragment(), OperationFlowView,
     ComponentProvider<OperationComponent> {
@@ -46,7 +49,11 @@ internal class OperationFlowFragment : MvpAppCompatFragment(), OperationFlowView
 
         when (screen) {
             OperationFlowRouter.Main -> navController.setGraph(R.navigation.operation_flow_nav_graph)
-            OperationFlowRouter.Pay -> navController.navigate(OperationFragmentDirections.toPay())
+            is OperationFlowRouter.Pay -> navigate(NavCommand(
+                NavCommands.Activity(
+                    Intent(requireActivity(), screen.activity),
+                ),
+            ))
             is OperationFlowRouter.Success -> navController
                 .navigate(
                     ru.lemaitre.result.R.id.success_nav_graph,

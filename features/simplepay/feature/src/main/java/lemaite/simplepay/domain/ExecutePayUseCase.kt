@@ -1,4 +1,4 @@
-package ru.lemaitre.operation.domain
+package lemaite.simplepay.domain
 
 import javax.inject.Inject
 
