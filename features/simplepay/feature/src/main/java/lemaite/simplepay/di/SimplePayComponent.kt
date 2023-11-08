@@ -1,5 +1,6 @@
 package lemaite.simplepay.di
 
+import android.content.Context
 import lemaitre.simplepay.api.SimplePayDeps
 import dagger.Component
 import lemaite.simplepay.flow.SimplePayFlowPresenter
@@ -9,6 +10,8 @@ import javax.inject.Scope
 @SimplePayScope
 @Component(dependencies = [SimplePayDeps::class], modules = [SimplePayModule::class])
 interface SimplePayComponent {
+
+    val simplePayDeps: SimplePayDeps
 
     @Component.Factory
     interface Factory {

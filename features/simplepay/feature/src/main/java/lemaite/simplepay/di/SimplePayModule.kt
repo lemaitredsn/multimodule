@@ -1,5 +1,7 @@
 package lemaite.simplepay.di
 
+import android.content.ContentResolver
+import android.content.Context
 import dagger.Module
 import dagger.Provides
 import lemaite.simplepay.data.PayNetworkRepository
@@ -15,4 +17,7 @@ class SimplePayModule {
 
     @Provides
     fun provideRepository(): PayRepository = PayNetworkRepository()
+
+    @Provides
+    fun provideContentResolver(context: Context): ContentResolver = context.contentResolver
 }
