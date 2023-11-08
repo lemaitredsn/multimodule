@@ -7,6 +7,7 @@ import dagger.multibindings.IntoMap
 import ru.lemaitre.account_details.flow.AccountDetailsFlowActivity
 import ru.lemaitre.common.utils.Dependencies
 import ru.lemaitre.common.utils.DependenciesKey
+import ru.lemaitre.mymultymodule.R
 import ru.lemaitre.products.api.ProductsDeps
 import ru.lemaitre.products.api.ProductsDepsProvider
 
@@ -19,6 +20,7 @@ object ProductsDependenciesModule {
             override val accountLoader: AccountLoader = impl.getAccountLoader()
             override val activityDetails: Class<*> = AccountDetailsFlowActivity::class.java
             override val extra: String = AccountDetailsFlowActivity.EXTRA_ID
+            override val selectAccountId: Int = com.example.select_account.R.navigation.select_account_flow_nav_graph
         }
 
     @Provides

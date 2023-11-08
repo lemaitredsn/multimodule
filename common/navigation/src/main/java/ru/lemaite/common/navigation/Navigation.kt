@@ -3,6 +3,7 @@ package ru.lemaite.common.navigation
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import androidx.annotation.NavigationRes
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavOptions
 import ru.lemaitre.common.utils.allParents
@@ -26,6 +27,11 @@ sealed class NavCommands {
     ) : NavCommands()
 
     data class Activity(val intent: Intent): NavCommands()
+
+    data class StartFragment(
+        @NavigationRes
+        val idFlow: Int
+    ) : NavCommands()
 }
 
 fun Fragment.navigate(navCommand: NavCommand) {

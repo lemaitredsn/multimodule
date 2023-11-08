@@ -6,4 +6,6 @@ internal sealed class ProductsRoute {
     object Chat : ProductsRoute()
 
     data class AccountDetails(val id: String, val activityDetails: Class<*>, val extra: String): ProductsRoute()
+
+    data class AccountSelect(val id: Int): ProductsRoute()
 }

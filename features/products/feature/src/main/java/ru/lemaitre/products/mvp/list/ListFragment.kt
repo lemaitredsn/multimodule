@@ -41,6 +41,10 @@ internal class ListFragment : MvpAppCompatFragment(), ListView {
             presenter.onProductItemClicked(it.id)
         }
 
+        view.findViewById<Button>(R.id.accountSelect).setOnClickListener {
+            presenter.onClickedTest()
+        }
+
     }
 
     override fun showAccounts(list: List<ProductUiModel>) {

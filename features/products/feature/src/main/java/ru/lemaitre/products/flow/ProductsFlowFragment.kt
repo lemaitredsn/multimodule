@@ -63,6 +63,14 @@ internal class ProductsFlowFragment : MvpAppCompatFragment(), ProductsFlowView,
                     )
                 )
             }
+
+            is ProductsRoute.AccountSelect -> {
+                navigate(
+                    NavCommand(
+                        NavCommands.StartFragment(screen.id)
+                    )
+                )
+            }
         }
     }
 }

@@ -42,4 +42,9 @@ internal class ListPresenter @Inject constructor(
         val extra = deps.productsDepsProvider.extra
         flow.toAccountDetails(id, activityDetails, extra)
     }
+
+    fun onClickedTest() {
+        val selectAccountId = deps.productsDepsProvider.selectAccountId
+        flow.toSelectAccount(selectAccountId)
+    }
 }

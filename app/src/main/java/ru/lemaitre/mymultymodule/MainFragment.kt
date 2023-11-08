@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.commit
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
@@ -39,6 +40,15 @@ class MainFragment : Fragment(R.layout.fragment_main), NavigationProvider {
                 isSingleTop = target.isSingleTop
             )
             is NavCommands.Browser -> error("no implement test")
+
+            is NavCommands.StartFragment -> navController.setGraph(target.idFlow)
+        //возможно это не так должно работать, возможно должен быть общий граф приложения в котором будет хранится все флоу и переходить по ним,
+            //так же возможно и сделать навигацию
+            /*
+            is NavCommands.StartFragment -> navController.navigate(target.idFlow)
+            is NavCommands.Back -> navCommand.backto previos flow //выход из флоу
+            is NavCommands.Exit -> navCommand.backto previos flow
+             */
         }
     }
 
