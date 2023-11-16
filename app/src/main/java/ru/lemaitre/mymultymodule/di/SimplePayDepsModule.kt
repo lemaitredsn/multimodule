@@ -5,6 +5,7 @@ import com.example.accounts.api.AccountLoader
 import dagger.Module
 import dagger.Provides
 import dagger.multibindings.IntoMap
+import lemaitre.simplepay.api.SimpleDepsProvider
 import lemaitre.simplepay.api.SimplePayDeps
 import ru.lemaitre.common.utils.Dependencies
 import ru.lemaitre.common.utils.DependenciesKey
@@ -14,11 +15,18 @@ import ru.lemaitre.common.utils.ResourceManager
 class SimplePayDepsModule {
 
     @Provides
+    fun provideSimpleDepsProvider(impl: SimplePayDeps) : SimpleDepsProvider {
+        return impl.simpleDepsProvider
+    }
+
+    @Provides
     fun provideSimplePayDeps(impl: AppComponent): SimplePayDeps {
         return object : SimplePayDeps {
-            override val resourceManager: ResourceManager = impl.resourceManager
-            override val context: Context = impl.context
-            override val _accountLoader: AccountLoader = impl.getAccountLoader()
+            override val simpleDepsProvider: SimpleDepsProvider = object : SimpleDepsProvider {
+                override val accountLoader: AccountLoader = impl.getAccountLoader()
+                override val context: Context = impl.context()
+                override val resourceManager: ResourceManager = impl.resourceManager()
+            }
         }
     }
 

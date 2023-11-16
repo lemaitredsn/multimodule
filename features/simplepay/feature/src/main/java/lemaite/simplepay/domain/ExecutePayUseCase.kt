@@ -2,7 +2,7 @@ package lemaite.simplepay.domain
 
 import javax.inject.Inject
 
-class ExecutePayUseCase @Inject constructor(
+internal class ExecutePayUseCase @Inject constructor(
     private val payRepository: PayRepository
 ) {
 

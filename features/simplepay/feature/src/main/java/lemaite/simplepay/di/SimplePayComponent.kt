@@ -9,7 +9,7 @@ import javax.inject.Scope
 
 @SimplePayScope
 @Component(dependencies = [SimplePayDeps::class], modules = [SimplePayModule::class])
-interface SimplePayComponent {
+internal interface SimplePayComponent {
 
     val simplePayDeps: SimplePayDeps
 

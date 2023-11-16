@@ -6,7 +6,11 @@ import ru.lemaitre.common.utils.Dependencies
 import ru.lemaitre.common.utils.ResourceManager
 
 interface SimplePayDeps: Dependencies {
-    val resourceManager: ResourceManager
+    val simpleDepsProvider: SimpleDepsProvider
+}
+
+interface SimpleDepsProvider {
+    val accountLoader: AccountLoader
     val context: Context
-    val _accountLoader: AccountLoader
+    val resourceManager: ResourceManager
 }

@@ -5,7 +5,7 @@ import moxy.viewstate.strategy.alias.AddToEndSingle
 import moxy.viewstate.strategy.alias.OneExecution
 
 @AddToEndSingle
-interface PayView: MvpView {
+internal interface PayView: MvpView {
 
     @OneExecution
     fun showError()

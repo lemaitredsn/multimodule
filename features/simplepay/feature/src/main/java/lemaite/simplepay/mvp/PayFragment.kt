@@ -14,7 +14,7 @@ import moxy.ktx.moxyPresenter
 import ru.lemaitre.common.utils.ComponentFinder
 import ru.lemaitre.common.utils.ComponentProvider
 
-class PayFragment: MvpAppCompatFragment(), PayView {
+internal class PayFragment: MvpAppCompatFragment(), PayView {
 
     private val presenter by moxyPresenter {
         ComponentFinder

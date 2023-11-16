@@ -19,7 +19,7 @@ import ru.lemaitre.common.utils.ComponentProvider
 import ru.lemaitre.common.utils.findDependencies
 import ru.lemaitre.common.utils.scopedComponent
 
-class SimplePayFlowFragment: MvpAppCompatFragment(), SimplePayFlowView, ComponentProvider<SimplePayComponent> {
+internal class SimplePayFlowFragment: MvpAppCompatFragment(), SimplePayFlowView, ComponentProvider<SimplePayComponent> {
 
     override val component: SimplePayComponent by scopedComponent {
         val s = DaggerSimplePayComponent

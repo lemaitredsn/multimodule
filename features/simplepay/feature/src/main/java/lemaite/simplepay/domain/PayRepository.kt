@@ -2,6 +2,6 @@ package lemaite.simplepay.domain
 
 import io.reactivex.Single
 
-interface PayRepository {
+internal interface PayRepository {
     fun execute(amount: String): Single<String>
 }

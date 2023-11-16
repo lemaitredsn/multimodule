@@ -11,7 +11,7 @@ import ru.lemaitre.architecture.BasePresenter
 import ru.lemaitre.common.utils.ResourceManager
 import javax.inject.Inject
 
-class PayPresenter @Inject constructor(
+internal class PayPresenter @Inject constructor(
     //todo передать какой-
 // нибуть получатель счетов установить его может сделать возможность выбора
     private val payUseCase: ExecutePayUseCase,

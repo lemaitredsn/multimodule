@@ -1,5 +1,5 @@
 package lemaite.simplepay.flow
 
-sealed class SimplePayFlowRoute {
+internal sealed class SimplePayFlowRoute {
     object Main : SimplePayFlowRoute()
 }
